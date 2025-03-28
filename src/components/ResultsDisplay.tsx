@@ -3,7 +3,7 @@ import React from 'react';
 import { useAppSelector } from '@/hooks/useRedux';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { BarChart, LineChart, AreaChart, PieChart, Pie, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Area, Line, Cell } from 'recharts';
-import { AlertCircle, Loader2 } from 'lucide-react';
+import { AlertCircle, Loader2, BarChart as BarChartIcon } from 'lucide-react';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 
 // Generate colors for pie chart
@@ -50,7 +50,7 @@ const ResultsDisplay: React.FC = () => {
       <Card className="h-full">
         <CardContent className="flex flex-col items-center justify-center h-full text-center p-12">
           <div className="rounded-full bg-primary/10 p-4 mb-4">
-            <BarChart className="h-8 w-8 text-primary" />
+            <BarChartIcon className="h-8 w-8 text-primary" />
           </div>
           <h3 className="text-xl font-semibold mb-2">Ask questions about your data</h3>
           <p className="text-muted-foreground max-w-md">
