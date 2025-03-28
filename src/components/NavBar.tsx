@@ -1,8 +1,9 @@
 
 import React from 'react';
-import { Bell, User, Settings } from 'lucide-react';
+import { Bell, Settings, User } from 'lucide-react';
 import Logo from './Logo';
 import { Button } from '@/components/ui/button';
+import { ThemeToggle } from './ThemeToggle';
 
 const NavBar: React.FC = () => {
   return (
@@ -11,6 +12,7 @@ const NavBar: React.FC = () => {
         <Logo />
         
         <div className="flex items-center space-x-4">
+          <ThemeToggle />
           <Button variant="ghost" size="icon">
             <Bell className="h-5 w-5" />
           </Button>
