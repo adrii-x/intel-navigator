@@ -55,9 +55,8 @@ npm run dev
 ## 🌐 Deployment
 
 The application is ready for deployment on platforms like:
-- Netlify
 - Vercel
-- Cloudflare Pages
+
 
 ## 🚧 Future Roadmap
 
@@ -82,4 +81,4 @@ Found a bug? Please open an issue on our GitHub repository.
 
 ---
 
-**Built with ❤️ by [Your Name]**
+**Built by Adrian Okonkwo**
