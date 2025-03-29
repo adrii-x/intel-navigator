@@ -16,15 +16,15 @@ const Dashboard: React.FC = () => {
         </p>
       </div>
       
-      <div className="mb-8 max-w-3xl mx-auto animate-fade-in relative z-30">
+      <div className="mb-8 max-w-3xl mx-auto animate-fade-in relative z-50">
         <QueryInput />
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6 z-10">
-        <div className="md:col-span-1 animate-fade-in z-10" style={{ animationDelay: '0.1s' }}>
+        <div className="md:col-span-1 animate-fade-in z-20" style={{ animationDelay: '0.1s' }}>
           <QueryHistory />
         </div>
-        <div className="md:col-span-2 animate-fade-in z-10" style={{ animationDelay: '0.2s' }}>
+        <div className="md:col-span-2 animate-fade-in z-20" style={{ animationDelay: '0.2s' }}>
           <ResultsDisplay />
         </div>
       </div>
