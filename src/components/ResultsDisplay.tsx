@@ -1,18 +1,16 @@
-
 import React from 'react';
 import { useAppSelector } from '@/hooks/useRedux';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { BarChart, LineChart, AreaChart, PieChart, Pie, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Area, Line, Cell } from 'recharts';
-import { AlertCircle, Loader2, BarChart as BarChartIcon } from 'lucide-react';
+import { AlertCircle, Loader2 } from 'lucide-react';
+import { BarChart as BarChartIcon } from 'lucide-react';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 
-// Generate colors for pie chart
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8'];
 
 const ResultsDisplay: React.FC = () => {
   const { activeQueryId, results, status, queries, error } = useAppSelector((state) => state.query);
   
-  // Loading state
   if (status === 'loading') {
     return (
       <Card className="h-full">
@@ -29,7 +27,6 @@ const ResultsDisplay: React.FC = () => {
     );
   }
   
-  // Error state
   if (status === 'failed' && error) {
     return (
       <Card className="h-full">
@@ -44,7 +41,6 @@ const ResultsDisplay: React.FC = () => {
     );
   }
   
-  // No active query
   if (!activeQueryId || !results[activeQueryId]) {
     return (
       <Card className="h-full">
@@ -61,7 +57,6 @@ const ResultsDisplay: React.FC = () => {
     );
   }
   
-  // Display results
   const result = results[activeQueryId];
   const activeQuery = queries.find(q => q.id === activeQueryId);
   
