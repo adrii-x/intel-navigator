@@ -1,69 +1,83 @@
-# Welcome to your Lovable project
 
-## Project info
+# Gen AI Analytics Dashboard
 
-**URL**: https://lovable.dev/projects/b1b010f6-41ca-41f7-8195-440dcb8594f3
+## Overview
 
-## How can I edit this code?
+This Gen AI Analytics Dashboard is a powerful, interactive web application that enables users to ask natural language questions about their business data and receive instant, visual insights. Built with modern web technologies, the dashboard provides a seamless and intuitive experience for data exploration.
 
-There are several ways of editing your application.
+## 🚀 Features
 
-**Use Lovable**
+### Smart Query Input
+- **Real-time Query Handling**: Submit business questions and get instant AI-generated insights
+- **Intelligent Query Tracking**: Prevents duplicate queries by checking query history
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/b1b010f6-41ca-41f7-8195-440dcb8594f3) and start prompting.
+### Dynamic Data Visualization
+- **Multiple Chart Types**: 
+  - Bar Charts
+  - Line Charts
+  - Area Charts
+  - Pie Charts
+- **Responsive Design**: Charts adapt to different screen sizes
+- **Interactive Tooltips**: Hover for detailed information
 
-Changes made via Lovable will be committed automatically to this repo.
+### Query History
+- **Persistent History**: Keep track of all submitted queries
+- **Quick Retrieval**: Click on past queries to instantly view previous results
+- **Clear History**: Option to reset query history
 
-**Use your preferred IDE**
+## 🛠 Tech Stack
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Frontend**: React.js
+- **State Management**: Redux Toolkit
+- **Styling**: Tailwind CSS
+- **Data Visualization**: Recharts
+- **Language**: TypeScript
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🔧 Installation
 
-Follow these steps:
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/gen-ai-analytics-dashboard.git
+cd gen-ai-analytics-dashboard
+```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+2. Install dependencies
+```bash
+npm install
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+3. Start the development server
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## 🌐 Deployment
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+The application is ready for deployment on platforms like:
+- Netlify
+- Vercel
+- Cloudflare Pages
 
-**Use GitHub Codespaces**
+## 🚧 Future Roadmap
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- [ ] Backend API Integration
+- [ ] Enhanced AI Query Processing
+- [ ] Advanced Filtering and Sorting
+- [ ] User Authentication
+- [ ] More Chart Types and Customizations
 
-## What technologies are used for this project?
+## 📄 License
 
-This project is built with .
+[Your License, e.g., MIT]
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 👥 Contributing
 
-## How can I deploy this project?
+Contributions are welcome! Please read our contributing guidelines before getting started.
 
-Simply open [Lovable](https://lovable.dev/projects/b1b010f6-41ca-41f7-8195-440dcb8594f3) and click on Share -> Publish.
+## 🐛 Issues
 
-## I want to use a custom domain - is that possible?
+Found a bug? Please open an issue on our GitHub repository.
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+---
+
+**Built with ❤️ by [Your Name/Organization]**
