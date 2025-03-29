@@ -33,9 +33,13 @@ const ResultsDisplay: React.FC = () => {
       <Card className="h-full">
         <CardContent className="p-6">
           <Alert variant="destructive">
-            <AlertCircle className="h-4 w-4" />
-            <AlertTitle>Error</AlertTitle>
-            <AlertDescription>{error}</AlertDescription>
+            <div className="flex items-start">
+              <AlertCircle className="h-4 w-4 mt-[3px] mr-2" />
+              <div>
+                <AlertTitle>Error</AlertTitle>
+                <AlertDescription>{error}</AlertDescription>
+              </div>
+            </div>
           </Alert>
         </CardContent>
       </Card>
@@ -66,9 +70,13 @@ const ResultsDisplay: React.FC = () => {
       <Card className="h-full">
         <CardContent className="p-6">
           <Alert variant="destructive">
-            <AlertCircle className="h-4 w-4" />
-            <AlertTitle>Error</AlertTitle>
-            <AlertDescription>{result.error}</AlertDescription>
+            <div className="flex items-start">
+              <AlertCircle className="h-4 w-4 mt-[3px] mr-2" />
+              <div>
+                <AlertTitle>Error</AlertTitle>
+                <AlertDescription>{result.error}</AlertDescription>
+              </div>
+            </div>
           </Alert>
         </CardContent>
       </Card>
