@@ -10,6 +10,7 @@ This Gen AI Analytics Dashboard is a powerful, interactive web application that 
 ### Smart Query Input
 - **Real-time Query Handling**: Submit business questions and get instant AI-generated insights
 - **Intelligent Query Tracking**: Prevents duplicate queries by checking query history
+- **Predictive Suggestions**: Get suggestions based on previously asked questions
 
 ### Dynamic Data Visualization
 - **Multiple Chart Types**: 
@@ -27,11 +28,11 @@ This Gen AI Analytics Dashboard is a powerful, interactive web application that 
 
 ## 🛠 Tech Stack
 
-- **Frontend**: React.js
+- **Frontend**: React.js with TypeScript
 - **State Management**: Redux Toolkit
-- **Styling**: Tailwind CSS
+- **Styling**: Tailwind CSS with custom animations
 - **Data Visualization**: Recharts
-- **Language**: TypeScript
+- **UI Components**: Shadcn UI
 
 ## 🔧 Installation
 
@@ -60,19 +61,20 @@ The application is ready for deployment on platforms like:
 
 ## 🚧 Future Roadmap
 
-- [ ] Backend API Integration
+- [ ] Backend API Integration with OpenAI
 - [ ] Enhanced AI Query Processing
 - [ ] Advanced Filtering and Sorting
 - [ ] User Authentication
-- [ ] More Chart Types and Customizations
+- [ ] Data Export Functionality
+- [ ] Custom Theming Options
 
 ## 📄 License
 
-[Your License, e.g., MIT]
+MIT License
 
 ## 👥 Contributing
 
-Contributions are welcome! Please read our contributing guidelines before getting started.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 🐛 Issues
 
@@ -80,4 +82,4 @@ Found a bug? Please open an issue on our GitHub repository.
 
 ---
 
-**Built with ❤️ by [Your Name/Organization]**
+**Built with ❤️ by [Your Name]**

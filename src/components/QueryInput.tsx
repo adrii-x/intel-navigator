@@ -106,13 +106,13 @@ const QueryInput: React.FC = () => {
               setShowSuggestions(e.target.value.length > 1);
             }}
             onFocus={() => setShowSuggestions(query.length > 1 && suggestions.length > 0)}
-            className="pl-10 pr-4 h-12 text-base shadow-sm border-muted hover:border-primary/50 focus-visible:ring-primary/30 transition-all duration-200"
+            className="pl-10 pr-4 h-12 text-base shadow-xl border-muted hover:border-primary/50 focus-visible:ring-primary/30 transition-all duration-200"
           />
         </div>
         <Button 
           type="submit" 
           size="lg" 
-          className="h-12 shadow-md hover:shadow-lg transition-all duration-200 hover:scale-105"
+          className="h-12 shadow-xl hover:shadow-2xl transition-all duration-200 hover:scale-105"
         >
           <Sparkles className="h-4 w-4 md:mr-2" />
           <span className="hidden md:inline">Analyze</span>
@@ -120,7 +120,7 @@ const QueryInput: React.FC = () => {
       </form>
 
       {showSuggestions && suggestions.length > 0 && (
-        <Card className="absolute z-10 mt-1 w-full overflow-hidden shadow-lg animate-fade-in">
+        <Card className="absolute z-50 mt-1 w-full overflow-hidden shadow-2xl animate-fade-in">
           <div className="divide-y">
             {suggestions.map((suggestion, index) => (
               <div

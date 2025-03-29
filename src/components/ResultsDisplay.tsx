@@ -14,7 +14,7 @@ const ResultsDisplay: React.FC = () => {
   
   if (status === 'loading') {
     return (
-      <Card className="h-full shadow-md transition-all duration-300">
+      <Card className="h-full shadow-xl transition-all duration-300 hover:shadow-2xl">
         <CardContent className="flex items-center justify-center h-full">
           <div className="text-center py-20 animate-fade-in">
             <Loader2 className="h-12 w-12 animate-spin mx-auto text-primary mb-4" />
@@ -30,7 +30,7 @@ const ResultsDisplay: React.FC = () => {
   
   if (status === 'failed' && error) {
     return (
-      <Card className="h-full shadow-md transition-all duration-300">
+      <Card className="h-full shadow-xl transition-all duration-300 hover:shadow-2xl">
         <CardContent className="p-6">
           <Alert variant="destructive">
             <div className="flex items-start">
@@ -48,7 +48,7 @@ const ResultsDisplay: React.FC = () => {
   
   if (!activeQueryId || !results[activeQueryId]) {
     return (
-      <Card className="h-full shadow-md transition-all duration-300">
+      <Card className="h-full shadow-xl transition-all duration-300 hover:shadow-2xl">
         <CardContent className="flex flex-col items-center justify-center h-full text-center p-12 animate-fade-in">
           <div className="rounded-full bg-primary/10 p-4 mb-4">
             <BarChartIcon className="h-8 w-8 text-primary" />
@@ -67,7 +67,7 @@ const ResultsDisplay: React.FC = () => {
   
   if (result.error) {
     return (
-      <Card className="h-full shadow-md transition-all duration-300">
+      <Card className="h-full shadow-xl transition-all duration-300 hover:shadow-2xl">
         <CardContent className="p-6">
           <Alert variant="destructive">
             <div className="flex items-start">
@@ -86,7 +86,7 @@ const ResultsDisplay: React.FC = () => {
   const { chart, insight } = result.data;
   
   return (
-    <Card className="h-full shadow-md transition-all duration-300 animate-fade-in">
+    <Card className="h-full shadow-xl transition-all duration-300 hover:shadow-2xl">
       <CardHeader>
         <CardTitle className="text-xl">
           {activeQuery?.text}
@@ -165,7 +165,7 @@ const ResultsDisplay: React.FC = () => {
           </ResponsiveContainer>
         </div>
         
-        <div className="mt-8 bg-secondary p-4 rounded-lg shadow-sm">
+        <div className="mt-8 bg-secondary p-4 rounded-lg shadow-md">
           <h3 className="font-medium mb-2 flex items-center">
             <span className="bg-primary text-primary-foreground p-1 rounded text-xs mr-2">AI INSIGHT</span>
             Key Insights

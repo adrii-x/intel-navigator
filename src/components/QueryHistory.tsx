@@ -15,7 +15,7 @@ const QueryHistory: React.FC = () => {
   
   if (queries.length === 0) {
     return (
-      <Card className="h-full shadow-md transition-all duration-300">
+      <Card className="h-full shadow-xl transition-all duration-300 hover:shadow-2xl">
         <CardHeader>
           <CardTitle className="text-lg flex items-center gap-2">
             <History className="h-5 w-5" />
@@ -47,7 +47,7 @@ const QueryHistory: React.FC = () => {
   };
 
   return (
-    <Card className="h-full shadow-md transition-all duration-300">
+    <Card className="h-full shadow-xl transition-all duration-300 hover:shadow-2xl">
       <CardHeader className="pb-3">
         <div className="flex justify-between items-center">
           <CardTitle className="text-lg flex items-center gap-2">
@@ -73,7 +73,7 @@ const QueryHistory: React.FC = () => {
               key={query.id}
               className={`p-3 cursor-pointer transition-all duration-200 border-l-2 hover:bg-secondary ${
                 activeQueryId === query.id 
-                  ? 'border-primary bg-primary/5 shadow-sm' 
+                  ? 'border-primary bg-primary/5 shadow-md' 
                   : 'border-transparent hover:border-primary/30'
               }`}
               onClick={() => dispatch(setActiveQuery(query.id))}
