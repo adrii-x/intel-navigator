@@ -2,7 +2,7 @@
 import React from 'react';
 import { useAppSelector } from '@/hooks/useRedux';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
-import { Bar, Area, Line, Pie, ResponsiveContainer, BarChart, AreaChart, LineChart, PieChart, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { Bar, Area, Line, Pie, ResponsiveContainer, BarChart, AreaChart, LineChart, PieChart, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Cell } from 'recharts';
 import { AlertCircle } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -15,6 +15,9 @@ const chartConfig = {
     color: '#8884d8',
   },
 };
+
+// Colors for pie chart segments
+const COLORS = ['#8884d8', '#83a6ed', '#8dd1e1', '#82ca9d', '#a4de6c', '#d0ed57', '#ffc658'];
 
 // Create chart components using the ChartContainer
 const BarChartComponent = ({ data }: { data: any[] }) => (
@@ -64,7 +67,12 @@ const PieChartComponent = ({ data }: { data: any[] }) => (
     <ResponsiveContainer width="100%" height="100%">
       <PieChart>
         <Tooltip content={<ChartTooltipContent />} />
-        <Pie data={data} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={80} fill="#8884d8" label />
+        <Pie data={data} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={80} label>
+          {data.map((entry, index) => (
+            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+          ))}
+        </Pie>
+        <Legend />
       </PieChart>
     </ResponsiveContainer>
   </ChartContainer>
