@@ -8,50 +8,66 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 
+// Define chart config for the ChartContainer
+const chartConfig = {
+  value: {
+    label: 'Value',
+    color: '#8884d8',
+  },
+};
+
 // Create chart components using the ChartContainer
 const BarChartComponent = ({ data }: { data: any[] }) => (
-  <ResponsiveContainer width="100%" height="100%">
-    <BarChart data={data}>
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="name" />
-      <YAxis />
-      <Tooltip content={<ChartTooltipContent />} />
-      <Bar dataKey="value" fill="#8884d8" />
-    </BarChart>
-  </ResponsiveContainer>
+  <ChartContainer config={chartConfig} className="h-full">
+    <ResponsiveContainer width="100%" height="100%">
+      <BarChart data={data}>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="name" />
+        <YAxis />
+        <Tooltip content={<ChartTooltipContent />} />
+        <Bar dataKey="value" fill="#8884d8" />
+      </BarChart>
+    </ResponsiveContainer>
+  </ChartContainer>
 );
 
 const LineChartComponent = ({ data }: { data: any[] }) => (
-  <ResponsiveContainer width="100%" height="100%">
-    <LineChart data={data}>
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="name" />
-      <YAxis />
-      <Tooltip content={<ChartTooltipContent />} />
-      <Line type="monotone" dataKey="value" stroke="#8884d8" />
-    </LineChart>
-  </ResponsiveContainer>
+  <ChartContainer config={chartConfig} className="h-full">
+    <ResponsiveContainer width="100%" height="100%">
+      <LineChart data={data}>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="name" />
+        <YAxis />
+        <Tooltip content={<ChartTooltipContent />} />
+        <Line type="monotone" dataKey="value" stroke="#8884d8" />
+      </LineChart>
+    </ResponsiveContainer>
+  </ChartContainer>
 );
 
 const AreaChartComponent = ({ data }: { data: any[] }) => (
-  <ResponsiveContainer width="100%" height="100%">
-    <AreaChart data={data}>
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="name" />
-      <YAxis />
-      <Tooltip content={<ChartTooltipContent />} />
-      <Area type="monotone" dataKey="value" fill="#8884d8" />
-    </AreaChart>
-  </ResponsiveContainer>
+  <ChartContainer config={chartConfig} className="h-full">
+    <ResponsiveContainer width="100%" height="100%">
+      <AreaChart data={data}>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="name" />
+        <YAxis />
+        <Tooltip content={<ChartTooltipContent />} />
+        <Area type="monotone" dataKey="value" fill="#8884d8" />
+      </AreaChart>
+    </ResponsiveContainer>
+  </ChartContainer>
 );
 
 const PieChartComponent = ({ data }: { data: any[] }) => (
-  <ResponsiveContainer width="100%" height="100%">
-    <PieChart>
-      <Tooltip content={<ChartTooltipContent />} />
-      <Pie data={data} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={80} fill="#8884d8" label />
-    </PieChart>
-  </ResponsiveContainer>
+  <ChartContainer config={chartConfig} className="h-full">
+    <ResponsiveContainer width="100%" height="100%">
+      <PieChart>
+        <Tooltip content={<ChartTooltipContent />} />
+        <Pie data={data} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={80} fill="#8884d8" label />
+      </PieChart>
+    </ResponsiveContainer>
+  </ChartContainer>
 );
 
 const ResultsDisplay: React.FC = () => {
