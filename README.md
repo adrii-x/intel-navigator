@@ -38,8 +38,8 @@ This Gen AI Analytics Dashboard is a powerful, interactive web application that 
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/gen-ai-analytics-dashboard.git
-cd gen-ai-analytics-dashboard
+git clone https://github.com/adrii-x/intel-navigator.git
+cd intel-navigator
 ```
 
 2. Install dependencies
