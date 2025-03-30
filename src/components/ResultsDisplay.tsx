@@ -1,18 +1,63 @@
 
 import React from 'react';
 import { useAppSelector } from '@/hooks/useRedux';
-import { BarChart, AreaChart, LineChart, PieChart } from '@/components/ui/chart';
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
+import { Bar, Area, Line, Pie, ResponsiveContainer, BarChart, AreaChart, LineChart, PieChart } from 'recharts';
 import { AlertCircle } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { mockData } from '@/utils/mockData';
+
+// Create chart components using the ChartContainer
+const BarChartComponent = ({ data }: { data: any[] }) => (
+  <ResponsiveContainer width="100%" height="100%">
+    <BarChart data={data}>
+      <Bar dataKey="value" fill="#8884d8" />
+      <ChartTooltip 
+        content={<ChartTooltipContent />} 
+      />
+    </BarChart>
+  </ResponsiveContainer>
+);
+
+const LineChartComponent = ({ data }: { data: any[] }) => (
+  <ResponsiveContainer width="100%" height="100%">
+    <LineChart data={data}>
+      <Line type="monotone" dataKey="value" stroke="#8884d8" />
+      <ChartTooltip 
+        content={<ChartTooltipContent />} 
+      />
+    </LineChart>
+  </ResponsiveContainer>
+);
+
+const AreaChartComponent = ({ data }: { data: any[] }) => (
+  <ResponsiveContainer width="100%" height="100%">
+    <AreaChart data={data}>
+      <Area type="monotone" dataKey="value" fill="#8884d8" />
+      <ChartTooltip 
+        content={<ChartTooltipContent />} 
+      />
+    </AreaChart>
+  </ResponsiveContainer>
+);
+
+const PieChartComponent = ({ data }: { data: any[] }) => (
+  <ResponsiveContainer width="100%" height="100%">
+    <PieChart>
+      <Pie data={data} dataKey="value" nameKey="name" cx="50%" cy="50%" fill="#8884d8" />
+      <ChartTooltip 
+        content={<ChartTooltipContent />} 
+      />
+    </PieChart>
+  </ResponsiveContainer>
+);
 
 const ResultsDisplay: React.FC = () => {
-  const { activeQuery, queries } = useAppSelector((state) => state.query);
+  const { activeQueryId, queries, results } = useAppSelector((state) => state.query);
   
   // Find the active query from the queries array
-  const currentQuery = queries.find(q => q.id === activeQuery);
+  const currentQuery = queries.find(q => q.id === activeQueryId);
   
   if (!currentQuery) {
     return (
@@ -30,6 +75,17 @@ const ResultsDisplay: React.FC = () => {
       </Card>
     );
   }
+
+  // Get mock data for the active query
+  const mockData = results[currentQuery.id]?.data?.chart?.data || 
+    [
+      { name: 'Jan', value: 10000 },
+      { name: 'Feb', value: 15000 },
+      { name: 'Mar', value: 12000 },
+      { name: 'Apr', value: 20000 },
+      { name: 'May', value: 18000 },
+      { name: 'Jun', value: 22000 }
+    ];
 
   // Based on the query, determine which charts to show
   // This is a simplified logic - in a real app, this would come from the AI service
@@ -86,16 +142,16 @@ const ResultsDisplay: React.FC = () => {
             </TabsTrigger>
           </TabsList>
           <TabsContent value="chart1" className="h-[350px] pt-4">
-            <BarChart data={mockData} />
+            <BarChartComponent data={mockData} />
           </TabsContent>
           <TabsContent value="chart2" className="h-[350px] pt-4">
-            <LineChart data={mockData} />
+            <LineChartComponent data={mockData} />
           </TabsContent>
           <TabsContent value="chart3" className="h-[350px] pt-4">
-            <AreaChart data={mockData} />
+            <AreaChartComponent data={mockData} />
           </TabsContent>
           <TabsContent value="chart4" className="h-[350px] pt-4">
-            <PieChart data={mockData} />
+            <PieChartComponent data={mockData} />
           </TabsContent>
         </Tabs>
       </CardContent>
